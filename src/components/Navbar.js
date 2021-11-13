@@ -13,8 +13,8 @@ class Navbar extends Component{
 
                 </nav>
                 <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-                <img src="/images/allgame.jpg" style={{height:"40px",width:"40px",borderRadius:"20px"}}/>
-                <span className="ml-3 text-xl headerTitle2" style ={{color :"white"}}>Photo <span className="text-xl headerTitle">Market</span></span>
+                <img src="/logo.png" style={{height:"50px",width:"50px",borderRadius:"20px"}}/>
+                <span className="ml-3 text-xl headerTitle2" style ={{color :"black"}}>Photo <span className="text-xl headerTitle">Market</span></span>
                 </a>
                 <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
                 <a className="mr-5 hover:text-gray-900 account">Balance : {this.props.accountBalance}</a>

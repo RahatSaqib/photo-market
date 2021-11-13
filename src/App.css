@@ -1,10 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 .account{
   border-radius: 20px;
-  border: 1px solid #263d60;
+  /* border: 1px solid #263d60; */
   padding-right: 5px;
   padding-left: 5px;
-  color: #f3f204;
+  color: #780caa;
   font-weight: 400;
+}
+.headerTitle{
+  font-family: 'Pacifico', cursive;
+  color: #780caa;
+  font-size: 30px;
+}
+.headerTitle2{
+  font-family: 'Josefin Sans', sans-serif;
+  
+  font-size: 30px;
 }
 .App {
   text-align: center;
