@@ -25,7 +25,10 @@ class Main extends Component{
                             placeholder="Image description..."
                             required
                             className="form-control w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                <button type="submit" class="btn btn-primary btn-block btn-lg">Upload!</button>
+                {this.props.uploading ?
+                <button type="submit" class="btn btn-block btn-lg" style={{background:"white",color:"gray"}} disabled>Uploading!</button>
+            :<button type="submit" class="btn btn-primary btn-block btn-lg">Upload!</button>}
+                
                 </div>
                 
                 </form>

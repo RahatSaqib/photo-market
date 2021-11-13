@@ -77,7 +77,9 @@ class App extends Component {
     console.log("Submitting file to ipfs...")
 
     //adding file to the IPFS
+    this.setState({uploading : true})
     ipfs.add(this.state.buffer, (error, result) => {
+      this.setState({uploading : false})
       console.log('Ipfs result', result)
       if(error) {
         console.error(error)
@@ -104,7 +106,8 @@ class App extends Component {
       photoMarket: null,
       images: [],
       loading: true,
-      accountBalance: 0
+      accountBalance: 0,
+      uploading: false
     }
 
     this.uploadImage = this.uploadImage.bind(this)
@@ -123,6 +126,7 @@ class App extends Component {
                 captureFile={this.captureFile}
                 uploadImage={this.uploadImage}
                 tipImageOwner={this.tipImageOwner}
+                uploading={this.state.uploading}
               />
           }
           
