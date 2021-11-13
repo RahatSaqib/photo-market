@@ -9,7 +9,7 @@ class Main extends Component{
             <section className="text-gray-600 body-font">
     
             <div className="container px-5 py-24 mx-auto">
-                <form className="md:w-1/2" style={{margin:"0 auto"}} onSubmit={(event) => {
+                <form className="md:w-1/2" style={{margin:"0 auto",paddingBottom:"20px"}} onSubmit={(event) => {
                     event.preventDefault()
                     const description = this.imageDescription.value
                     this.props.uploadImage(description)
@@ -35,7 +35,7 @@ class Main extends Component{
                         className='mr-2'
                         width='30'
                         height='30'
-                        style={{borderRadius:"30px"}}
+                        style={{borderRadius:"40px"}}
                         src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
                       />
                       {image.author}
@@ -53,16 +53,19 @@ class Main extends Component{
                             console.log(event.target.name, tipAmount)
                             this.props.tipImageOwner(event.target.name, tipAmount)
                           }}>Give Tips 0.1 ETH
-                            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14"></path>
-                            <path d="M12 5l7 7-7 7"></path>
-                            </svg>
+                                        <img className='ml-2'
+                        width='20'
+                        height='20'
+                        style={{borderRadius:"40px"}}
+                        src ="/eth.png"/>
                         </button>
                         <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                            <svg className="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                            </svg>{window.web3.utils.fromWei(image.tipAmount.toString(), 'Ether')} ETH
+                            <img className='mr-2'
+                        width='20'
+                        height='20'
+                        style={{borderRadius:"40px"}}
+                        src ="/eth.png"/>
+                            {window.web3.utils.fromWei(image.tipAmount.toString(), 'Ether')} ETH
                         </span>
 
                         </div>
