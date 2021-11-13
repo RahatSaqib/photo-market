@@ -17,13 +17,14 @@ class Navbar extends Component{
                         className='ml-2'
                         width='30'
                         height='30'
+                        style={{borderRadius:"60px"}}
                         src={`data:image/png;base64,${new Identicon(this.props.account, 30).toString()}`}
                     />
                     : <span></span>
                 }
                     
                     
-                    <p className="ml-4"> Account : {this.props.account.slice(0,5)}....{this.props.account.slice(-5)}</p></a>
+                    <p className="ml-4 accountDetails" > {this.props.account.slice(0,5)}....{this.props.account.slice(-5)}</p></a>
 
                 </nav>
                 <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
@@ -31,7 +32,7 @@ class Navbar extends Component{
                 <span className="ml-3 text-xl headerTitle2" style ={{color :"black"}}>Photo <span className="text-xl headerTitle">Market</span></span>
                 </a>
                 <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-                <a className="mr-5 hover:text-gray-900 account">Balance : {this.props.accountBalance}</a>
+                <a className="mr-5  accountDetails">Balance : {this.props.accountBalance}</a>
 
                 </div>
             </div>

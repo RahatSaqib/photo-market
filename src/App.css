@@ -16,6 +16,23 @@
   color: #780caa;
   font-size: 30px;
 }
+.form-control{
+    margin: 0px auto;
+    margin-bottom: 20px;
+    flex-direction: column;
+    border: 1px solid #ebe6e6;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #eaeaea;
+}
+.accountDetails{
+    border: 1px solid #c3c3c3;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    color: white;
+    background: #662d91;
+}
 .headerTitle2{
   font-family: 'Josefin Sans', sans-serif;
   
