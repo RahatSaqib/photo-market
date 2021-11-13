@@ -7,59 +7,40 @@ class Main extends Component{
         return(
             
             <section className="text-gray-600 body-font">
-
-            <div className="relative mb-4">
-                    <label for="message" className="leading-7 text-sm text-gray-600">Image Description</label>
-                    <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-            </div>
-
-            <div className="container-fluid mt-5">
-
-
-        <div className="row">
-          <main role="main" className="col-lg-12 ml-auto mr-auto" style={{ maxWidth: '500px' }}>
-            <div className="content mr-auto ml-auto">
-              <p>&nbsp;</p>
-              <h2>Share Image</h2>
-              <form onSubmit={(event) => {
-                event.preventDefault()
-                const description = this.imageDescription.value
-                this.props.uploadImage(description)
-              }} >
-                <input type='file' accept=".jpg, .jpeg, .png, .bmp, .gif" onChange={this.props.captureFile} />
-                  <div className="form-group mr-sm-2">
-                    <br></br>
-                      <input
-                        id="imageDescription"
-                        type="text"
-                        ref={(input) => { this.imageDescription = input }}
-                        className="form-control"
-                        placeholder="Image description..."
-                        required />
-                  </div>
-                <button type="submit" class="btn btn-primary btn-block btn-lg">Upload!</button>
-              </form>
-              <p>&nbsp;</p>
-            </div>
-          </main>
-        </div>
-            </div>
+    
             <div className="container px-5 py-24 mx-auto">
-                <div className="flex flex-wrap -m-4">
-                { this.props.images.map((image, key) => {
+                <form className="md:w-1/2" style={{margin:"0 auto"}} onSubmit={(event) => {
+                    event.preventDefault()
+                    const description = this.imageDescription.value
+                    this.props.uploadImage(description)
+                }} >
+                <div className="relative mb-4">
+                        <input type='file' accept=".jpg, .jpeg, .png, .bmp, .gif" onChange={this.props.captureFile} />
+                        <textarea id="imageDescription"
+                            type="text"
+                            ref={(input) => { this.imageDescription = input }}
+                            placeholder="Image description..."
+                            required
+                            className="form-control w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Upload!</button>
+                </form>
+                <div className="flex-wrap -m-4">
+                { this.props.images.slice(0).reverse().map((image, key) => {
                 return(
-                    <div className="p-4 md:w-1/3">
+                    <div className="p-4 md:w-1/2" style={{margin:"0 auto"}}>
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <div className="p-6">
+                    <div className="p-6 flex">
                     <img
                         className='mr-2'
                         width='30'
                         height='30'
+                        style={{borderRadius:"30px"}}
                         src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
                       />
-                      <small>{image.author}</small>
+                      {image.author}
                     </div>
-                    <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={`https://ipfs.infura.io/ipfs/${image.hash}`} alt="blog"/>
+                    <img className=" w-full object-cover object-center" src={`https://ipfs.infura.io/ipfs/${image.hash}`} alt="blog"/>
                     <div className="p-6">
                         
                         <p className="leading-relaxed mb-3">{image.description}</p> 

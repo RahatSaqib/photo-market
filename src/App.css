@@ -21,6 +21,14 @@
   
   font-size: 30px;
 }
+.btn-primary{
+  background: #662d91;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #9b9b9b;
+  cursor: pointer;
+}
 .App {
   text-align: center;
 }
