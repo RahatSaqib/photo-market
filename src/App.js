@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import PhotoMarket from '../abis/PhotoMarket.json'
+import React, { Component } from 'react';
+import Identicon from 'identicon.js';
+import Navbar from './components/Navbar'
+import Main from './components/Main'
+import Web3 from 'web3';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//Declare IPFS
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      decentragram: null,
+      images: [],
+      loading: true,
+      accountBalance: 0
+    }
+
+    this.uploadImage = this.uploadImage.bind(this)
+    this.tipImageOwner = this.tipImageOwner.bind(this)
+    this.captureFile = this.captureFile.bind(this)
+  }
+
+  render(){
+      return (
+        <div className="App">
+          <Navbar account = {this.state.account}
+                  accountBalance = {this.state.accountBalance}/>
+        </div>
+  );}
 }
 
 export default App;

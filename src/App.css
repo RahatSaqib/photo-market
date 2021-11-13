@@ -1,3 +1,11 @@
+.account{
+  border-radius: 20px;
+  border: 1px solid #263d60;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #f3f204;
+  font-weight: 400;
+}
 .App {
   text-align: center;
 }
