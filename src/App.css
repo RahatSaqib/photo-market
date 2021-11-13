@@ -6,8 +6,10 @@
   /* border: 1px solid #263d60; */
   padding-right: 5px;
   padding-left: 5px;
-  color: #780caa;
-  font-weight: 400;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
 }
 .headerTitle{
   font-family: 'Pacifico', cursive;

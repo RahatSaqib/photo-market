@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
+import Identicon from 'identicon.js';
+
 
 class Navbar extends Component{
     // var accountSplice  =  this.props.account.slice(0,4);
@@ -9,7 +11,19 @@ class Navbar extends Component{
             <header className="text-gray-600 body-font">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a className="mr-5 hover:text-gray-900 account">Account : {this.props.account.slice(0,5)}....{this.props.account.slice(-5)}</a>
+                <a className="mr-5 hover:text-gray-900 account">
+                    
+                { this.props.account ? <img
+                        className='ml-2'
+                        width='30'
+                        height='30'
+                        src={`data:image/png;base64,${new Identicon(this.props.account, 30).toString()}`}
+                    />
+                    : <span></span>
+                }
+                    
+                    
+                    <p className="ml-4"> Account : {this.props.account.slice(0,5)}....{this.props.account.slice(-5)}</p></a>
 
                 </nav>
                 <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
