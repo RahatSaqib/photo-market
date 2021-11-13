@@ -30,7 +30,7 @@ contract PhotoMarket {
     address payable author
   );
 
-  constructor() payable {
+  constructor() public {
     name = "Photo Market";
     owner = msg.sender;
   }
@@ -47,9 +47,9 @@ contract PhotoMarket {
     imageCount ++;
 
     // Add Image to the contract
-    images[imageCount] = Image(imageCount, _imgHash, _description, 0, payable(msg.sender));
+    images[imageCount] = Image(imageCount, _imgHash, _description, 0, msg.sender);
     // Trigger an event
-    emit ImageCreated(imageCount, _imgHash, _description, 0, payable(msg.sender));
+    emit ImageCreated(imageCount, _imgHash, _description, 0, msg.sender);
   }
 
   function tipImageOwner(uint _id) public payable {

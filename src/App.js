@@ -1,4 +1,4 @@
-import PhotoMarket from '../abis/PhotoMarket.json'
+import PhotoMarket from './abis/PhotoMarket.json'
 import React, { Component } from 'react';
 import Identicon from 'identicon.js';
 import Navbar from './components/Navbar'
@@ -20,9 +20,9 @@ class App extends Component {
       accountBalance: 0
     }
 
-    this.uploadImage = this.uploadImage.bind(this)
-    this.tipImageOwner = this.tipImageOwner.bind(this)
-    this.captureFile = this.captureFile.bind(this)
+    // this.uploadImage = this.uploadImage.bind(this)
+    // this.tipImageOwner = this.tipImageOwner.bind(this)
+    // this.captureFile = this.captureFile.bind(this)
   }
 
   render(){
@@ -30,6 +30,7 @@ class App extends Component {
         <div className="App">
           <Navbar account = {this.state.account}
                   accountBalance = {this.state.accountBalance}/>
+          <Main/>
         </div>
   );}
 }
