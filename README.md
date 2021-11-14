@@ -11,9 +11,15 @@
 
 ***
 
-https://user-images.githubusercontent.com/37343956/141649724-8284e191-6926-4da1-b8d8-e83adb9dca46.mp4
+Demo video link : https://drive.google.com/file/d/1Oah1st76PG27CrzFhOraYHs4dDETHpmn/view?usp=sharing
 
 
+## 【Screenshots】
+![PM3](https://user-images.githubusercontent.com/37343956/141669886-c51c2a79-f9dc-46a3-be4f-1ac80fd15f65.png)
+
+![PM1](https://user-images.githubusercontent.com/37343956/141669889-f6fb3b32-90aa-47e6-886e-2579f1189fc5.png)
+![pm](https://user-images.githubusercontent.com/37343956/141669892-317bd734-1fa7-4f50-952d-7a13042d9d27.png)
+![pm4](https://user-images.githubusercontent.com/37343956/141669898-b359d792-c8b8-4432-be8b-4e2a7379e9fc.png)
 
 ## 【Setup】
 
